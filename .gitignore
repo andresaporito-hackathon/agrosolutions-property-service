@@ -1,0 +1,75 @@
+﻿# ============================
+# .NET / Visual Studio
+# ============================
+bin/
+obj/
+out/
+
+# Rider
+.idea/
+*.sln.iml
+
+# Visual Studio
+.vs/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa]ppPackages/
+[Aa]ppx/
+[Bb]uild/
+[Bb]in/
+
+# Test results
+TestResults/
+
+# ============================
+# Logs
+# ============================
+*.log
+
+# ============================
+# OS
+# ============================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# ============================
+# Environment / Secrets
+# ============================
+.env
+.env.*
+secrets.json
+
+# ============================
+# Docker
+# ============================
+**/docker-compose.override.yml
+
+# ============================
+# VS Code
+# ============================
+.vscode/
+
+# ============================
+# NuGet
+# ============================
+*.nupkg
+*.snupkg
+.nuget/
+
+# ============================
+# Others
+# ============================
+*.swp
+*.tmp

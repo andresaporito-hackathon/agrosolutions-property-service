@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: property-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: property-api
+  template:
+    metadata:
+      labels:
+        app: property-api
+    spec:
+      containers:
+      - name: property-api
+        image: andresaporito/agrosolutions-agrosolutions-property-service:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

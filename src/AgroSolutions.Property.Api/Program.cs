@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Prometheus;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -67,11 +68,24 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-app.UseSwagger();
-app.UseSwaggerUI();
+app.UseSwagger(c =>
+{
+    c.RouteTemplate = "swagger/{documentName}/swagger.json";
+});
+
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "AgroSolutions Property API v1");
+    c.RoutePrefix = "swagger";
+});
+
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.UseRouting();
+app.UseHttpMetrics();
+app.MapMetrics();
+
 app.Run();

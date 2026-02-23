@@ -79,13 +79,13 @@ app.UseSwaggerUI(c =>
     c.RoutePrefix = "swagger";
 });
 
+app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers();
-app.UseRouting();
 app.UseHttpMetrics();
 app.MapMetrics();
 
+app.MapControllers();
 app.Run();
